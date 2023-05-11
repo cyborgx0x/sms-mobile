@@ -1,34 +1,73 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telephony/telephony.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'sms.dart';
+import 'package:flutter/widgets.dart';
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
 
-void main() {
-  backgroundMessageHandler(SmsMessage message) async {
-    spamDetect(message.body);
-  }
+void main() async {
 
-  final Telephony telephony = Telephony.instance;
-  telephony.listenIncomingSms(
-      onNewMessage: (SmsMessage message) {
-        // Handle message
-      },
-      onBackgroundMessage: backgroundMessageHandler);
-  runApp(MyApp());
+  // Avoid errors caused by flutter upgrade.
+// Importing 'package:flutter/widgets.dart' is required.
+  WidgetsFlutterBinding.ensureInitialized();
+  // Open the database and store the reference.
+  // databaseFactory = databaseFactoryFfi;
+  final database = openDatabase(
+    // Set the path to the database. Note: Using the `join` function from the
+    // `path` package is best practice to ensure the path is correctly
+    // constructed for each platform.
+    join(await getDatabasesPath(), 'SMS.db'),
+    onCreate: (db, version) {
+      // Run the CREATE TABLE statement on the database.
+      return db.execute(
+        'CREATE TABLE smsitems(id INTEGER PRIMARY KEY, address TEXT, body TEXT, spam BIT)',
+      );
+    },
+    version: 1,
+  );
+  
+Future<void> insertSMS(SMSItem smsitem) async {
+  // Get a reference to the database.
+  final db = await database;
+
+  // `conflictAlgorithm` to use in case the same dog is inserted twice.
+  //
+  // In this case, replace any previous data.
+  await db.insert(
+    'smsitems',
+    smsitem.toMap(),
+    conflictAlgorithm: ConflictAlgorithm.replace,
+  );
 }
 
-Future<http.Response> spamDetect(String? sms) {
-  return http.post(
-    Uri.parse('http://10.0.2.2/detect'),
-    headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
-    },
-    body: jsonEncode(<String, String?>{
-      'sms': sms,
-    }),
-  );
+Future<List<SMSItem>> getSMSItem() async {
+  // Get a reference to the database.
+  final db = await database;
+
+  // Query the table for all The Dogs.
+  final List<Map<String, dynamic>> maps = await db.query('smsitems');
+
+  // Convert the List<Map<String, dynamic> into a List<Dog>.
+  return List.generate(maps.length, (i) {
+    return SMSItem(
+      id: maps[i]['id'],
+      address: maps[i]['address'],
+      body: maps[i]['body'],
+      spam: maps[i]['spam'],
+    );
+  });
+}
+var fido = const SMSItem(
+  id: 1,
+  address: 'Fido',
+  body: "hello",
+  spam: "false",
+);
+
+await insertSMS(fido);
+print(await getSMSItem());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -36,6 +75,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    topLevel();
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
@@ -60,6 +101,9 @@ class MyAppState extends ChangeNotifier {
   var favorites = <WordPair>[];
 
   void toggleFavorite() {
+
+    spamDetect(
+        "Khu chung cu cao cap VinHome dang mo ban voi gia re nhat thi truong. Nhanh tay so huu can ho voi lai suat vay 0% trong 30 thang dau tien. Hotline 0888888888");
     if (favorites.contains(current)) {
       favorites.remove(current);
     } else {
