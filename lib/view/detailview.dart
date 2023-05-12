@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sms_spam_detection/view/component/menu.dart';
-/// Flutter code sample for [AppBar].
+import 'package:sms_spam_detection/view/layout.dart';
+
 
 void main() => runApp(const AppBarApp());
 

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'sms.dart';
 
-import 'view/component/menu.dart';
+import 'view/layout.dart';
+import 'view/component/sms.dart';
 class AppBarApp extends StatelessWidget {
   const AppBarApp({super.key});
 
@@ -11,6 +12,7 @@ class AppBarApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: AppBarExample(),
+      
     );
   }
 }

@@ -1,15 +1,10 @@
-// Copyright 2019 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/material.dart';
-
-class AppBarDemo extends StatelessWidget {
-  const AppBarDemo({super.key});
+import 'component/sms.dart';
+class AppBarExample extends StatelessWidget {
+  const AppBarExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -18,7 +13,7 @@ class AppBarDemo extends StatelessWidget {
           onPressed: () {},
         ),
         title: Text(
-          "SPAM SMS DEFENDER",
+          "SMS DEFENDER",
         ),
         actions: [
           IconButton(
@@ -58,12 +53,16 @@ class AppBarDemo extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        child: Text(
-          "need localization",
+      body: Scrollbar(
+        child: Center(
+          child: ListView(
+            children: [
+              for (var i = 0; i < 10; i++) 
+                CardExample()
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
