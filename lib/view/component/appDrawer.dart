@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import '../state/page.dart';
 // Press the Navigation Drawer button to the left of AppBar to show
 // a simple Drawer with two items.
 class SMSDrawer extends StatelessWidget {
@@ -11,6 +12,7 @@ class SMSDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var currentPageState = context.watch<PageState>();
     final drawerHeader = UserAccountsDrawerHeader(
       accountName: Text("Xin chào Thuan Nguyen"),
       accountEmail: Text(
@@ -29,6 +31,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.favorite),
           onTap: () {
+            currentPageState.changePage(0);
             Navigator.pop(context);
           },
         ),
@@ -38,6 +41,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.comment),
           onTap: () {
+            currentPageState.changePage(1);
             Navigator.pop(context);
           },
         ),
@@ -47,6 +51,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.comment),
           onTap: () {
+            currentPageState.changePage(2);
             Navigator.pop(context);
           },
         ),
