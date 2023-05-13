@@ -4,21 +4,14 @@
 
 import 'package:flutter/material.dart';
 
-class AppBarDemo extends StatelessWidget {
-  const AppBarDemo({super.key});
+class SMSAppBar extends StatelessWidget {
+  const SMSAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
+    return AppBar(
         title: Text(
-          "SPAM SMS DEFENDER",
+          "SMS DEFENDER",
         ),
         actions: [
           IconButton(
@@ -57,13 +50,7 @@ class AppBarDemo extends StatelessWidget {
             },
           )
         ],
-      ),
-      body: Center(
-        child: Text(
-          "need localization",
-        ),
-      ),
-    );
+      );
   }
 }
 
