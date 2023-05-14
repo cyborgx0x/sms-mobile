@@ -3,16 +3,23 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import '../state/page.dart';
+import 'back_button.dart';
 class SMSAppBar extends StatelessWidget {
   const SMSAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var currentPageState = context.watch<PageState>();
+    if (currentPageState.current == "detail_sms") {
+      
+    }
+    else {
+
+    }
     return AppBar(
-        title: Text(
-          "SMS DEFENDER",
-        ),
+        title: navigatedStateButton(),
         actions: [
           IconButton(
             tooltip: "Favorite",
@@ -46,6 +53,19 @@ class SMSAppBar extends StatelessWidget {
           )
         ],
       );
+  }
+}
+
+class navigatedStateButton extends StatelessWidget {
+  const navigatedStateButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "SMS DEFENDER",
+    );
   }
 }
 

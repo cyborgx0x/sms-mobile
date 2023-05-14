@@ -412,31 +412,37 @@ Map getConversationList() {
   return conversationList;
 }
 
-Map getAllConversationWithSMS() {
-  
+
+Map getFilterConversationList(filter) {
   var conversationList = getConversationList();
-  for (var sms in SMSSample) {
-    if (conversationList.containsKey(sms['address'])) {
-      var a  = conversationList[sms['address']];
-      a.add(sms);
-      conversationList[sms['address']] = a;
+  var queue  = [];
+  for (var conversation in conversationList.keys) {
+    var spam = false;
+    var smsList = getSMSList(conversation);
+    for (var sms in smsList) {
+      if (sms['spam'] == true) {
+        spam = true;
+      } 
     }
-    else {
-      var a  = [];
-      a.add(sms);
-      conversationList[sms['address']] = a;
+    if (spam) {
+      queue.add(conversation);
     }
+  }
+  if (filter == "nospam") {
+    for (var item in queue) {
+    conversationList.remove(item);
   }
   return conversationList;
-}
-
-Map getNoSpamConversation() {
-  var allConversation = getAllConversationWithSMS();
-  var noSpamConversation = {};
-  for (var conversation in allConversation.entries) {
-    
   }
-  return {};
+  else {
+    var spamList = {};
+    for (var item in queue) {
+      spamList[item] = conversationList[item];
+    }
+    return spamList;
+  }
+  
+
 }
 void main() {
   var smsList = getConversationList();

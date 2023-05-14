@@ -5,6 +5,13 @@ class SMSCard extends StatelessWidget {
   const SMSCard(this.sms, {super.key});
   @override
   Widget build(BuildContext context) {
+    var icon;
+    if (sms['spam'] == false) {
+      icon = Icons.sms;
+    }
+    else {
+      icon = Icons.block;
+    }
     return Center(
       child: SizedBox(
         
@@ -13,7 +20,7 @@ class SMSCard extends StatelessWidget {
           
           child: ListTile(
             leading: ExcludeSemantics(
-              child: CircleAvatar(child: Icon(Icons.block)),
+              child: CircleAvatar(child: Icon(icon)),
             ),
             title: Text(sms['sms']),
             subtitle: Text(sms['address']),

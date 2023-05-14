@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'component/sms_card.dart';
 import 'package:provider/provider.dart';
 import 'state/page.dart';
@@ -21,33 +20,6 @@ class SMSListView extends StatelessWidget {
   }
 }
 
-class SMSSpamListView extends StatelessWidget {
-  const SMSSpamListView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    var smsList = getSpamSMSList();
-    return ListView(
-      children: [for (var sms in smsList) SMSCard(sms)],
-    );
-  }
-}
-
-class AllSMSList extends StatelessWidget {
-  const AllSMSList({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    var smsList = SMSSample;
-    return ListView(
-      children: [for (var sms in smsList) SMSCard(sms)],
-    );
-  }
-}
 
 class ConversationListView extends StatelessWidget {
   const ConversationListView({
@@ -60,13 +32,10 @@ class ConversationListView extends StatelessWidget {
     Map getData = {};
     switch (currentPageState.current) {
       case "no_spam_list":
-        getData = getConversationList();
+        getData = getFilterConversationList("nospam");
         break;
       case "all_spam_list":
-        getData = getConversationList();
-        break;
-      case "all_sms_list":
-        getData = getConversationList();
+        getData = getFilterConversationList("spam");
         break;
       default:
         getData = getConversationList();

@@ -4,7 +4,7 @@ import 'component/app_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sms_spam_detection/view/state/page.dart';
 import 'list_view.dart';
-import 'detail_view.dart';
+
 
 class SMSHomePage extends StatelessWidget {
   const SMSHomePage({super.key});
