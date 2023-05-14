@@ -19,10 +19,10 @@ class SMSHomePage extends StatelessWidget {
         page = SMSListView();
         break;
       case "all_spam_list":
-        page = PageView();
+        page = SMSSpamListView();
         break;
       case "all_sms_list":
-        page = PageView();
+        page = AllSMSList();
         break;
       case "detail_sms":
         page = SMSDetailView();

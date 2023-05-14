@@ -41,11 +41,6 @@ class SMSAppBar extends StatelessWidget {
                     "COPY",
                   ),
                 ),
-                PopupMenuItem(
-                  child: Text(
-                    "Không làm gì",
-                  ),
-                ),
               ];
             },
           )
