@@ -31,7 +31,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.favorite),
           onTap: () {
-            currentPageState.changePage(0);
+            currentPageState.changePage("no_spam_list");
             Navigator.pop(context);
           },
         ),
@@ -41,7 +41,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.comment),
           onTap: () {
-            currentPageState.changePage(1);
+            currentPageState.changePage("all_spam_list");
             Navigator.pop(context);
           },
         ),
@@ -51,7 +51,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.comment),
           onTap: () {
-            currentPageState.changePage(2);
+            currentPageState.changePage("all_sms_list");
             Navigator.pop(context);
           },
         ),

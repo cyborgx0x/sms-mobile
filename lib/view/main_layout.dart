@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'component/sms.dart';
-import 'component/appDrawer.dart';
-import 'component/appBar.dart';
+import 'component/app_drawer.dart';
+import 'component/app_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sms_spam_detection/view/state/page.dart';
-
+import 'list_view.dart';
+import 'detail_view.dart';
 
 class SMSHomePage extends StatelessWidget {
   const SMSHomePage({super.key});
@@ -15,14 +15,17 @@ class SMSHomePage extends StatelessWidget {
 
     Widget page;
     switch (currentPageState.current) {
-      case 0:
+      case "no_spam_list":
         page = SMSListView();
         break;
-      case 1:
+      case "all_spam_list":
         page = PageView();
         break;
-      case 2:
+      case "all_sms_list":
         page = PageView();
+        break;
+      case "detail_sms":
+        page = SMSDetailView();
         break;
       default:
         throw UnimplementedError('no widget');
@@ -42,19 +45,4 @@ class SMSHomePage extends StatelessWidget {
   }
 }
 
-class SMSListView extends StatelessWidget {
-  const SMSListView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        for (var i = 0; i < 10; i++) 
-          CardExample(i)
-      ],
-    );
-  }
-}
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CardExample extends StatelessWidget {
-  final int index;
-  const CardExample(this.index, {super.key});
+  
+  const CardExample( {super.key});
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -17,5 +17,5 @@ class CardExample extends StatelessWidget {
     );
   }
 
-  void handleTapping() => print(index);
+  void handleTapping() => print("Hello");
 }

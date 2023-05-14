@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PageState extends ChangeNotifier {
 
-  var current = 0;
+  var current = "home";
 
   void changePage(index) {
     current = index;
