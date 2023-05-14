@@ -35,3 +35,31 @@ serviceCenterAddress:
 vina: +84123456789
 viettel: +84980000009
 mobile: +84960000000 
+
+
+Framework cho thêm flutter vào...
+
+Phần Yêu cầu phát triển:
+- Sử dụng Git
+- Sử dụng Dart cơ bản giúp nắm bắt các API của flutter
+- Hiểu rõ cấu trúc ứng dụng hệ thống
+- Sử dụng VSCode với các extension phục vụ phát triển
+- Sử dụng Android Studio để tạo máy ảo
+- SQL để thực hiện phát triển với CSDL 
+
+
+Flutter: Hỗ trợ toàn bộ từ đầu tới cuối trong việc phát triển một ứng dụng di động
+
+
+API Server bao hồm:
+
+1. Web Server: cung cấp các chức năng giao tiếp với bên ngoài
+2. Dectection Algorithm: Cung cấp chức năng nhận diện 
+3. Quản lý tiến trình (chưa có)
+
+...
+
+Model Training???
+Huấn luyện mô hình cho Server triển khai, cung cấp các API nhận diện tin nhắn
+trong GIT...
+pull về nhé
