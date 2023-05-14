@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:sms_spam_detection/view/sample.dart';
 import 'package:flutter/widgets.dart';
+
 
 const String tableSMSItem = 'smsitem';
 const String columnId = 'id';
@@ -62,7 +62,7 @@ create table smsitem (
     return sms;
   }
   Future<List<SMSItem>> getAll() async {
-    
+
     return [];
   }
   Future<SMSItem> getSMSItem(int id) async {
