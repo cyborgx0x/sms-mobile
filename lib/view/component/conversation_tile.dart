@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:sms_spam_detection/view/state/page.dart';
 
 class ConversationTile extends StatelessWidget {
-  final Map sms;
-  const ConversationTile(this.sms, {super.key});
+  final MapEntry conversation;
+  const ConversationTile(this.conversation, {super.key});
+
   @override
   Widget build(BuildContext context) {
+    var currentPageState = context.watch<PageState>();
     return Center(
       child: ListTile(
         leading: ExcludeSemantics(
-          child: CircleAvatar(child: Icon(Icons.favorite)),
+          child: CircleAvatar(child: Icon(Icons.person)),
         ),
-        title: Text(sms['sms']),
-        subtitle: Text(sms['address']),
-        onTap: handleTapping,
+        title: Text(conversation.key),
+        subtitle: Text(conversation.value['sms']),
+        onTap: () {
+          
+          currentPageState.changePage("detail_sms");
+          currentPageState.changeSMS(conversation.key);
+        },
       ),
     );
   }
 
-  void handleTapping() => print(sms);
 }

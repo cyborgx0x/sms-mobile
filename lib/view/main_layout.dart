@@ -15,20 +15,11 @@ class SMSHomePage extends StatelessWidget {
 
     Widget page;
     switch (currentPageState.current) {
-      case "no_spam_list":
+      case "detail_sms":
         page = SMSListView();
         break;
-      case "all_spam_list":
-        page = SMSSpamListView();
-        break;
-      case "all_sms_list":
-        page = AllSMSList();
-        break;
-      case "detail_sms":
-        page = SMSDetailView();
-        break;
       default:
-        throw UnimplementedError('no widget');
+        page = ConversationListView();
     }
     return Scaffold(
       drawer: SMSDrawer(),

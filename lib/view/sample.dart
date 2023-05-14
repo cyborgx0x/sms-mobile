@@ -369,7 +369,7 @@ var SMSSample = [
         'address': '5555555555',
         'sms': 'Congratulations! You have won a shopping spree worth \$1000.',
         'spam': true
-    },
+    }
    
 ];
 
@@ -400,15 +400,45 @@ List getSpamSMSList() {
 
 Map getConversationList() {
   
-  Map<String,List> conversationList = {};
-  for (Map sms in SMSSample) {
+  var conversationList = {};
+  for (var sms in SMSSample) {
     if (conversationList.containsKey(sms['address'])) {
-      conversationList[sms['address']].add(sms);
+      conversationList[sms['address']] = sms;
+    }
+    else {
+      conversationList[sms['address']] = sms;
     }
   }
   return conversationList;
 }
+
+Map getAllConversationWithSMS() {
+  
+  var conversationList = getConversationList();
+  for (var sms in SMSSample) {
+    if (conversationList.containsKey(sms['address'])) {
+      var a  = conversationList[sms['address']];
+      a.add(sms);
+      conversationList[sms['address']] = a;
+    }
+    else {
+      var a  = [];
+      a.add(sms);
+      conversationList[sms['address']] = a;
+    }
+  }
+  return conversationList;
+}
+
+Map getNoSpamConversation() {
+  var allConversation = getAllConversationWithSMS();
+  var noSpamConversation = {};
+  for (var conversation in allConversation.entries) {
+    
+  }
+  return {};
+}
 void main() {
-  var smsList = getSMSList("5555555555");
+  var smsList = getConversationList();
   print(smsList);
 }
