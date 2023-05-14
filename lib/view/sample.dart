@@ -202,12 +202,6 @@ var SMSSample = [
         'sms': 'Good evening! Wishing you a wonderful night ahead.',
         'spam': true
     },
-        {
-        'id': 34,
-        'address': '9999999999',
-        'sms': 'Good evening! Wishing you a wonderful night ahead.',
-        'spam': false
-    },
     {
         'id': 35,
         'address': '4444444444',
@@ -448,3 +442,4 @@ void main() {
   var smsList = getConversationList();
   print(smsList);
 }
+

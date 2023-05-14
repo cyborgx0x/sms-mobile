@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:sms_spam_detection/model/sqlite.dart';
 class SMSCard extends StatelessWidget {
   final Map sms;
   const SMSCard(this.sms, {super.key});
@@ -31,5 +31,8 @@ class SMSCard extends StatelessWidget {
     );
   }
 
-  void handleTapping() => print(sms);
+  void handleTapping() {
+    // var sampleSMS = getSMS1();
+    // sampleSMS.then((value) => print(value.toString()));
+  }
 }

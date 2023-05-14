@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'state/page.dart';
 import 'sample.dart';
 import 'component/conversation_tile.dart';
+import '../model/sqlite.dart';
 
 class SMSListView extends StatelessWidget {
   const SMSListView({
