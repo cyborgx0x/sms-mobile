@@ -12,14 +12,15 @@ class SMSAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var currentPageState = context.watch<PageState>();
+    var show;
     if (currentPageState.current == "detail_sms") {
-      
+      show = BackButton(onPressed: () => currentPageState.changePage(currentPageState.previousPage),);
     }
     else {
-
+      show = showTitle();
     }
     return AppBar(
-        title: navigatedStateButton(),
+        title: show,
         actions: [
           IconButton(
             tooltip: "Favorite",
@@ -56,8 +57,8 @@ class SMSAppBar extends StatelessWidget {
   }
 }
 
-class navigatedStateButton extends StatelessWidget {
-  const navigatedStateButton({
+class showTitle extends StatelessWidget {
+  const showTitle({
     super.key,
   });
 

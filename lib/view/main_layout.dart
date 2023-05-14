@@ -21,8 +21,18 @@ class SMSHomePage extends StatelessWidget {
       default:
         page = ConversationListView();
     }
+    var drawer;
+    if (currentPageState.current == "detail_sms") {
+      drawer = null;
+    }
+    else {
+      drawer = SMSDrawer();
+    }
+
     return Scaffold(
-      drawer: SMSDrawer(),
+      
+      drawer: drawer,
+
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0), //
         child: SMSAppBar(),
