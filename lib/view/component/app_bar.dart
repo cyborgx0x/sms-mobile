@@ -14,7 +14,12 @@ class SMSAppBar extends StatelessWidget {
     var currentPageState = context.watch<PageState>();
     var show;
     if (currentPageState.current == "detail_sms") {
-      show = BackButton(onPressed: () => currentPageState.changePage(currentPageState.previousPage),);
+      show = Row(
+        children: [
+          BackButton(onPressed: () => currentPageState.changePage(currentPageState.previousPage),),
+          showTitle(),
+        ],
+      );
       return AppBar(
         title: show
       );
@@ -46,9 +51,27 @@ class showTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var currentPageState = context.watch<PageState>();
+    if (currentPageState.current == "detail_sms") {
+        return Text(
+          currentPageState.CurrentConversationID,
+        );
+    }
+    else if (currentPageState.current == "no_spam_list") {
+      return Text(
+          "Hội thoại",
+        );
+    }
+    else if (currentPageState.current == "all_spam_list") {
+      return Text(
+          "Hộp thư rác",
+        );
+    }
+    else {
     return Text(
-      "SMS DEFENDER",
+      "Tất cả hội thoại",
     );
+    }
   }
 }
 

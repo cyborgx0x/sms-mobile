@@ -2,370 +2,202 @@ var SMSSample = [
     {
         'id': 1,
         'address': '1234567890',
-        'sms': 'Hello, how are you?',
+        'sms': 'Xin chào, bạn khỏe không?',
         'spam': false
     },
     {
         'id': 2,
         'address': '9876543210',
-        'sms': 'Congratulations! You have won a prize.',
+        'sms': 'Xin chúc mừng! Bạn đã trúng thưởng.',
         'spam': true
     },
     {
         'id': 3,
         'address': '5555555555',
-        'sms': 'Reminder: Your appointment is tomorrow.',
+        'sms': 'Nhắc nhở: Cuộc hẹn của bạn là ngày mai.',
         'spam': false
     },
     {
         'id': 4,
         'address': '1111111111',
-        'sms': 'Hi there! Just checking in.',
+        'sms': 'Chào bạn! Chỉ kiểm tra thôi.',
         'spam': false
     },
     {
         'id': 5,
         'address': '9999999999',
-        'sms': 'URGENT: Your account has been compromised. Click here to secure it.',
+        'sms': 'KHẨN: Tài khoản của bạn đã bị xâm phạm. Nhấp vào đây để bảo mật.',
         'spam': true
     },
     {
         'id': 6,
         'address': '2222222222',
-        'sms': 'Don\'t forget to pick up groceries on your way home.',
+        'sms': 'Đừng quên mua đồ tạp hóa trên đường về nhà.',
         'spam': false
     },
     {
         'id': 7,
         'address': '8888888888',
-        'sms': 'Limited time offer: Buy one, get one free!',
+        'sms': 'Ưu đãi trong thời gian giới hạn: Mua một tặng một miễn phí!',
         'spam': true
     },
     {
         'id': 8,
         'address': '7777777777',
-        'sms': 'Reminder: Meeting at 2 PM today.',
+        'sms': 'Nhắc nhở: Cuộc họp lúc 2 giờ chiều hôm nay.',
         'spam': false
     },
     {
         'id': 9,
         'address': '4444444444',
-        'sms': 'You have been selected for a special discount.',
+        'sms': 'Bạn đã được chọn để nhận chiết khấu đặc biệt.',
         'spam': true
     },
     {
         'id': 10,
         'address': '6666666666',
-        'sms': 'Hi! Just wanted to say hello.',
+        'sms': 'Xin chào! Chỉ muốn nói xin chào.',
         'spam': false
     },
     {
         'id': 11,
-        'address': '5555555555',
-        'sms': 'Your package has been delivered.',
+        'address': '1231231231',
+        'sms': 'Chúc mừng năm mới! Chúc bạn mọi điều tốt lành.',
         'spam': false
     },
     {
         'id': 12,
-        'address': '2222222222',
-        'sms': 'Limited stock available. Grab your favorite item now!',
+        'address': '4564564564',
+        'sms': 'KHUYẾN MÃI LỚN: Giảm giá 50% cho toàn bộ sản phẩm.',
         'spam': true
     },
     {
         'id': 13,
-        'address': '3333333333',
-        'sms': 'Your payment is due. Please make the payment by the end of the day.',
+        'address': '7897897897',
+        'sms': 'Bạn đã đăng ký thành công. Chúng tôi sẽ liên hệ lại.',
         'spam': false
     },
     {
-        'id': 14,
-        'address': '7777777777',
-        'sms': 'Exclusive discount for loyal customers. Use code XYZ123.',
-        'spam': true
+        "id": 15,
+        "address": "8247443943",
+        "sms": "Tin nh\u1eafn s\u1ed1 15: Ch\u00fac m\u1eebng n\u0103m m\u1edbi! Ch\u00fac b\u1ea1n c\u00f3 m\u1ed9t n\u0103m th\u00e0nh c\u00f4ng v\u00e0 h\u1ea1nh ph\u00fac.",
+        "spam": false
     },
     {
-        'id': 15,
-        'address': '8888888888',
-        'sms': 'Reminder: Parent-Teacher meeting tomorrow.',
-        'spam': false
+        "id": 16,
+        "address": "3169640061",
+        "sms": "Tin nh\u1eafn s\u1ed1 16: \u0110\u1eb7t h\u00e0ng ngay h\u00f4m nay \u0111\u1ec3 nh\u1eadn \u01b0u \u0111\u00e3i \u0111\u1eb7c bi\u1ec7t.",
+        "spam": true
     },
     {
-        'id': 16,
-        'address': '9999999999',
-        'sms': 'Congratulations! You have won a vacation package.',
-        'spam': true
+        "id": 17,
+        "address": "4884750308",
+        "sms": "Tin nh\u1eafn s\u1ed1 17: H\u00f4m nay l\u00e0 ng\u00e0y l\u1ec5 quan tr\u1ecdng. Ch\u00fac m\u1eebng v\u00e0 tr\u00e0n \u0111\u1ea7y ni\u1ec1m vui.",
+        "spam": true
     },
     {
-        'id': 17,
-        'address': '1111111111',
-        'sms': 'Good morning! Have a great day ahead.',
-        'spam': false
+        "id": 18,
+        "address": "5563595251",
+        "sms": "Tin nh\u1eafn s\u1ed1 18: Th\u1eddi ti\u1ebft h\u00f4m nay r\u1ea5t \u0111\u1eb9p. H\u00e3y ra ngo\u00e0i v\u00e0 t\u1eadn h\u01b0\u1edfng.",
+        "spam": true
     },
     {
-        'id': 18,
-        'address': '4444444444',
-        'sms': 'Hurry! Limited time sale. Get up'
+        "id": 19,
+        "address": "6703794717",
+        "sms": "Tin nh\u1eafn s\u1ed1 19: Gi\u1ea3i \u0111\u1ea5u b\u00f3ng \u0111\u00e1 cu\u1ed1i tu\u1ea7n n\u00e0y \u0111\u00e3 b\u1ecb h\u1ee7y.",
+        "spam": false
     },
     {
-        'id': 19,
-        'address': '2222222222',
-        'sms': 'Reminder: Pay your electricity bill by the due date.',
-        'spam': false
+        "id": 20,
+        "address": "4873031665",
+        "sms": "Tin nh\u1eafn s\u1ed1 20: B\u1ea1n \u0111\u00e3 \u0111\u0103ng k\u00fd th\u00e0nh c\u00f4ng. H\u00e3y ki\u1ec3m tra email \u0111\u1ec3 ho\u00e0n th\u00e0nh quy tr\u00ecnh.",
+        "spam": false
     },
     {
-        'id': 20,
-        'address': '5555555555',
-        'sms': 'Congratulations! You have won a free movie ticket.',
-        'spam': true
+        "id": 21,
+        "address": "1491469956",
+        "sms": "Tin nh\u1eafn s\u1ed1 21: Ch\u00fac m\u1eebng n\u0103m m\u1edbi! Ch\u00fac b\u1ea1n c\u00f3 m\u1ed9t n\u0103m th\u00e0nh c\u00f4ng v\u00e0 h\u1ea1nh ph\u00fac.",
+        "spam": false
     },
     {
-        'id': 21,
-        'address': '7777777777',
-        'sms': 'Important notice: Changes to the terms and conditions of your subscription.',
-        'spam': false
+        "id": 22,
+        "address": "6087644074",
+        "sms": "Tin nh\u1eafn s\u1ed1 22: Xin ch\u00e0o, b\u1ea1n c\u00f3 th\u1ec3 g\u1ecdi l\u1ea1i cho t\u00f4i kh\u00f4ng?",
+        "spam": false
     },
     {
-        'id': 22,
-        'address': '3333333333',
-        'sms': 'Limited stock alert! Grab your favorite item before it sells out.',
-        'spam': true
+        "id": 23,
+        "address": "1433752632",
+        "sms": "Tin nh\u1eafn s\u1ed1 23: \u0110\u1eebng qu\u00ean tham gia s\u1ef1 ki\u1ec7n v\u00e0o ng\u00e0y mai.",
+        "spam": false
     },
     {
-        'id': 23,
-        'address': '8888888888',
-        'sms': 'Reminder: Dentist appointment tomorrow at 4 PM.',
-        'spam': false
+        "id": 24,
+        "address": "5958002271",
+        "sms": "Tin nh\u1eafn s\u1ed1 24: C\u1ea3m \u01a1n b\u1ea1n \u0111\u00e3 \u0111\u0103ng k\u00fd. Ch\u00fang t\u00f4i s\u1ebd li\u00ean h\u1ec7 l\u1ea1i trong th\u1eddi gian s\u1edbm nh\u1ea5t.",
+        "spam": true
     },
     {
-        'id': 24,
-        'address': '1111111111',
-        'sms': 'Exclusive offer: Buy two, get one free!',
-        'spam': true
+        "id": 25,
+        "address": "7050026840",
+        "sms": "Tin nh\u1eafn s\u1ed1 25: H\u1eb9n g\u1eb7p l\u1ea1i b\u1ea1n trong bu\u1ed5i ti\u1ec7c t\u1ed1i nay.",
+        "spam": true
     },
     {
-        'id': 25,
-        'address': '9999999999',
-        'sms': 'Hello! Just checking in to see how you are doing.',
-        'spam': false
+        "id": 26,
+        "address": "9903551454",
+        "sms": "Tin nh\u1eafn s\u1ed1 26: H\u00f4m nay l\u00e0 ng\u00e0y l\u1ec5 quan tr\u1ecdng. Ch\u00fac m\u1eebng v\u00e0 tr\u00e0n \u0111\u1ea7y ni\u1ec1m vui.",
+        "spam": false
     },
     {
-        'id': 26,
-        'address': '2222222222',
-        'sms': 'Your order has been shipped. Expected delivery date: May 20th.',
-        'spam': false
+        "id": 27,
+        "address": "6405608156",
+        "sms": "Tin nh\u1eafn s\u1ed1 27: B\u1ea1n \u0111\u00e3 \u0111\u0103ng k\u00fd th\u00e0nh c\u00f4ng. H\u00e3y ki\u1ec3m tra email \u0111\u1ec3 ho\u00e0n th\u00e0nh quy tr\u00ecnh.",
+        "spam": false
     },
     {
-        'id': 27,
-        'address': '4444444444',
-        'sms': 'Claim your prize by replying with your details.',
-        'spam': true
+        "id": 28,
+        "address": "8659071515",
+        "sms": "Tin nh\u1eafn s\u1ed1 28: Xin ch\u00fac m\u1eebng! B\u1ea1n \u0111\u00e3 tr\u00fang gi\u1ea3i \u0111\u1eb7c bi\u1ec7t.",
+        "spam": true
     },
     {
-        'id': 28,
-        'address': '8888888888',
-        'sms': 'Reminder: Team meeting at 3 PM today.',
-        'spam': false
+        "id": 29,
+        "address": "2951004489",
+        "sms": "Tin nh\u1eafn s\u1ed1 29: Xin ch\u00fac m\u1eebng! B\u1ea1n \u0111\u00e3 tr\u00fang gi\u1ea3i \u0111\u1eb7c bi\u1ec7t.",
+        "spam": true
     },
     {
-        'id': 29,
-        'address': '6666666666',
-        'sms': 'Limited time offer: Get 20% off on all products.',
-        'spam': true
+        "id": 30,
+        "address": "1566678159",
+        "sms": "Tin nh\u1eafn s\u1ed1 30: \u0110\u1eb7t h\u00e0ng ngay h\u00f4m nay \u0111\u1ec3 nh\u1eadn \u01b0u \u0111\u00e3i \u0111\u1eb7c bi\u1ec7t.",
+        "spam": false
     },
     {
-        'id': 30,
-        'address': '5555555555',
-        'sms': 'Important: Update your account password for security purposes.',
-        'spam': false
+        "id": 31,
+        "address": "6827077561",
+        "sms": "Tin nh\u1eafn s\u1ed1 31: Ch\u00fac m\u1eebng sinh nh\u1eadt!",
+        "spam": false
     },
     {
-        'id': 31,
-        'address': '1111111111',
-        'sms': 'Congrats! You\'ve won a trip to a luxury resort.',
-        'spam': true
+        "id": 32,
+        "address": "9150199973",
+        "sms": "Tin nh\u1eafn s\u1ed1 32: Xin ch\u00fac m\u1eebng! B\u1ea1n \u0111\u00e3 tr\u00fang gi\u1ea3i \u0111\u1eb7c bi\u1ec7t.",
+        "spam": false
     },
     {
-        'id': 32,
-        'address': '7777777777',
-        'sms': 'Reminder: Pay your credit card bill by the due date.',
-        'spam': false
+        "id": 33,
+        "address": "1896314703",
+        "sms": "Tin nh\u1eafn s\u1ed1 33: \u0110\u01a1n h\u00e0ng c\u1ee7a b\u1ea1n \u0111\u00e3 \u0111\u01b0\u1ee3c giao th\u00e0nh c\u00f4ng.",
+        "spam": true
     },
     {
-        'id': 33,
-        'address': '3333333333',
-        'sms': 'Don\'t miss out on our flash sale. Limited stock available!',
-        'spam': true
-    },
-    {
-        'id': 34,
-        'address': '9999999999',
-        'sms': 'Good evening! Wishing you a wonderful night ahead.',
-        'spam': true
-    },
-    {
-        'id': 35,
-        'address': '4444444444',
-        'sms': 'Last chance! Sale ends tomorrow. Grab your favorite items now.',
-        'spam': true
-    },
-    {
-        'id': 36,
-        'address': '5555555555',
-        'sms': 'Reminder: Your flight is scheduled for tomorrow at 9 AM.',
-        'spam': false
-    },
-    {
-        'id': 37,
-        'address': '2222222222',
-        'sms': 'Exclusive offer for you: Get a free gift with your purchase.',
-        'spam': false
-    },
-    {
-        'id': 38,
-        'address': '6666666666',
-        'sms': 'Hurry! Limited time offer: Buy one, get one at 50% off.',
-        'spam': true
-    },
-    {
-        'id': 39,
-        'address': '8888888888',
-        'sms': 'Important notice: Your account has been temporarily suspended.',
-        'spam': false
-    },
-    {
-        'id': 40,
-        'address': '3333333333',
-        'sms': 'Congratulations! You have won a cash prize of \$1000.',
-        'spam': true
-    },
-    {
-        'id': 41,
-        'address': '7777777777',
-        'sms': 'Reminder: Parent-Teacher meeting next week.',
-        'spam': false
-    },
-    {
-        'id': 42,
-        'address': '1111111111',
-        'sms': 'Limited stock alert! Don\'t miss out on our latest collection.',
-        'spam': true
-    },
-    {
-        'id': 43,
-        'address': '2222222222',
-        'sms': 'Your appointment with Dr. Smith has been rescheduled.',
-        'spam': false
-    },
-    {
-        'id': 44,
-        'address': '9999999999',
-        'sms': 'Claim your reward by clicking the link below.',
-        'spam': true
-    },
-    {
-        'id': 45,
-        'address': '8888888888',
-        'sms': 'Reminder: Pay your rent by the end of the month.',
-        'spam': false
-    },
-    {
-        'id': 46,
-        'address': '4444444444',
-        'sms': 'Exciting offer: Get 50% off on all electronics.',
-        'spam': true
-    },
-    {
-        'id': 47,
-        'address': '7777777777',
-        'sms': 'Important: Update your contact information in your account settings.',
-        'spam': false
-    },
-    {
-        'id': 48,
-        'address': '6666666666',
-        'sms': 'Limited time sale: Buy now and get free shipping.',
-        'spam': true
-    },
-    {
-        'id': 49,
-        'address': '1111111111',
-        'sms': 'Good morning! Start your day with a smile.',
-        'spam': false
-    },
-    {
-        'id': 50,
-        'address': '5555555555',
-        'sms': 'Congratulations! You have won a gift voucher worth \$500.',
-        'spam': true
-    },
-        {
-        'id': 50,
-        'address': '5555555555',
-        'sms': 'Congratulations! You have won a gift voucher worth \$500.',
-        'spam': true
-    },
-    {
-        'id': 51,
-        'address': '6666666666',
-        'sms': 'Reminder: Don\'t forget to submit your assignment by tomorrow.',
-        'spam': false
-    },
-    {
-        'id': 52,
-        'address': '2222222222',
-        'sms': 'Limited stock alert! Grab the latest fashion trends now.',
-        'spam': true
-    },
-    {
-        'id': 53,
-        'address': '8888888888',
-        'sms': 'Important notice: Your subscription will expire soon. Renew now.',
-        'spam': false
-    },
-    {
-        'id': 54,
-        'address': '4444444444',
-        'sms': 'Claim your exclusive discount by using the code ABC123.',
-        'spam': true
-    },
-    {
-        'id': 55,
-        'address': '7777777777',
-        'sms': 'Reminder: Team outing this Saturday. Please confirm your attendance.',
-        'spam': false
-    },
-    {
-        'id': 56,
-        'address': '3333333333',
-        'sms': 'Limited time offer: Buy one, get one free on selected items.',
-        'spam': true
-    },
-    {
-        'id': 57,
-        'address': '9999999999',
-        'sms': 'Hello! Just wanted to check if you received the package.',
-        'spam': false
-    },
-    {
-        'id': 58,
-        'address': '2222222222',
-        'sms': 'Don\'t miss our flash sale. Get up to 70% off on electronics.',
-        'spam': true
-    },
-    {
-        'id': 59,
-        'address': '1111111111',
-        'sms': 'Reminder: Pay your phone bill by the due date.',
-        'spam': false
-    },
-    {
-        'id': 60,
-        'address': '5555555555',
-        'sms': 'Congratulations! You have won a shopping spree worth \$1000.',
-        'spam': true
+        "id": 34,
+        "address": "9960748637",
+        "sms": "Tin nh\u1eafn s\u1ed1 34: Ch\u00fac m\u1eebng sinh nh\u1eadt!",
+        "spam": true
     }
-   
-];
+    ];
 
 List getSMSList(address) {
   var smsList = [];
