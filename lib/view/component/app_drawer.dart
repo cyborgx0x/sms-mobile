@@ -14,9 +14,9 @@ class SMSDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     var currentPageState = context.watch<PageState>();
     final drawerHeader = UserAccountsDrawerHeader(
-      accountName: Text("Xin chào Thuan Nguyen"),
+      accountName: Text("Bonjour!!!"),
       accountEmail: Text(
-        "leeboykt@gmail.com",
+        "abc@diopthe20.com",
       ),
       currentAccountPicture: const CircleAvatar(
         child: FlutterLogo(size: 42.0),

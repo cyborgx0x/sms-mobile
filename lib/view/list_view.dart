@@ -4,7 +4,8 @@ import 'package:provider/provider.dart';
 import 'state/page.dart';
 import 'sample.dart';
 import 'component/conversation_tile.dart';
-import '../model/sqlite.dart';
+import '../controller/data.dart';
+
 
 class SMSListView extends StatelessWidget {
   const SMSListView({
@@ -30,7 +31,7 @@ class ConversationListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var currentPageState = context.watch<PageState>();
-    Map getData = {};
+    Map getData;
     switch (currentPageState.current) {
       case "no_spam_list":
         getData = getFilterConversationList("nospam");

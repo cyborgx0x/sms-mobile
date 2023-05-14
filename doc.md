@@ -1,7 +1,7 @@
 MÀN DANH SÁCH:
 - Bỏ:
-dấu 3 chấm
-hình trái tim
+dấu 3 chấm ✅
+hình trái tim ✅
 - Thêm:
 nhấn giữ vào hội thoại -> chọn 1 hoặc nhiều -> có thể đánh dấu hội thoại spam/không spam
 nhấn giữ có thể thả tim (kiểu đánh dấu quan trọng hay ghim gì đấy nếu được, không thì bỏ luôn)

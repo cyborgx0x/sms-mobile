@@ -1,5 +1,4 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:flutter/widgets.dart';
 
 
 const String tableSMSItem = 'smsitem';
@@ -61,9 +60,11 @@ create table smsitem (
     sms.id = await db.insert(tableSMSItem, sms.toMap());
     return sms;
   }
-  Future<List<SMSItem>> getAll() async {
 
-    return [];
+  Future<List<Map<String, Object?>>> getAll() async {
+    var records = await db.query('smsitem');
+
+    return records;
   }
   Future<SMSItem> getSMSItem(int id) async {
     List<Map> maps = await db.query(tableSMSItem,
@@ -90,16 +91,3 @@ create table smsitem (
 }
 
 
-Future<SMSItem> getSMS1() async {
-  var smsprovider = SMSProvider();
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await smsprovider.open("D:/sms.db");
-  // for (var sms in SMSSample) {
-  //   var smsToInsert = SMSItem.fromMap(sms);
-  //   smsprovider.insert(smsToInsert);
-  // }
-  var sampleSMS = smsprovider.getSMSItem(1);
-  return sampleSMS;
-  
-}

@@ -3,15 +3,18 @@ import 'package:provider/provider.dart';
 import 'view/main_layout.dart';
 import 'view/state/page.dart';
 import 'model/sqlite.dart';
+import 'model/sqlite.dart';
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
+
+  const MyApp({super.key});
+  
   @override
   Widget build(BuildContext context) {
-  
+    
+    
     return ChangeNotifierProvider(
       create: (context) => PageState(),
-      
       child: MaterialApp(
         title: 'Namer App',
         theme: ThemeData(

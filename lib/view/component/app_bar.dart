@@ -15,45 +15,27 @@ class SMSAppBar extends StatelessWidget {
     var show;
     if (currentPageState.current == "detail_sms") {
       show = BackButton(onPressed: () => currentPageState.changePage(currentPageState.previousPage),);
+      return AppBar(
+        title: show
+      );
     }
     else {
       show = showTitle();
-    }
-    return AppBar(
+      return AppBar(
         title: show,
         actions: [
-          IconButton(
-            tooltip: "Favorite",
-            icon: const Icon(
-              Icons.favorite,
-            ),
-            onPressed: () {},
-          ),
+          
           IconButton(
             tooltip: "Tìm kiếm",
             icon: const Icon(
               Icons.search,
             ),
             onPressed: () {},
-          ),
-          PopupMenuButton<Text>(
-            itemBuilder: (context) {
-              return [
-                PopupMenuItem(
-                  child: Text(
-                    "Đánh dấu spam",
-                  ),
-                ),
-                PopupMenuItem(
-                  child: Text(
-                    "COPY",
-                  ),
-                ),
-              ];
-            },
           )
         ],
       );
+    }
+    
   }
 }
 
