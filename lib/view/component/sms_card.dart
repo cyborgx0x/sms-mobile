@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sms_spam_detection/controller/data.dart';
+import 'package:sms_spam_detection/model/sqlite.dart';
 class SMSCard extends StatelessWidget {
-  final Map sms;
+  final SMSItem sms;
   const SMSCard(this.sms, {super.key});
   @override
   Widget build(BuildContext context) {
     var icon;
-    if (sms['spam'] == false) {
+    if (sms.spam == false) {
       icon = Icons.sms;
     }
     else {
@@ -22,8 +23,8 @@ class SMSCard extends StatelessWidget {
             leading: ExcludeSemantics(
               child: CircleAvatar(child: Icon(icon)),
             ),
-            title: Text(sms['sms']),
-            subtitle: Text(sms['address']),
+            title: Text(sms.sms),
+            subtitle: Text(sms.address),
             onTap: handleTapping,
           ),
         ),
@@ -32,7 +33,6 @@ class SMSCard extends StatelessWidget {
   }
 
   void handleTapping() {
-    var data = controllerGetAll();
-    data.then((value) => print(data));
+    print(sms.id);
   }
 }

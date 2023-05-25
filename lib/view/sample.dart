@@ -9,7 +9,7 @@ var SMSSample = [
         'id': 2,
         'address': '9876543210',
         'sms': 'Xin chúc mừng! Bạn đã trúng thưởng.',
-        'spam': true
+        'spam': 1
     },
     {
         'id': 3,
@@ -27,7 +27,7 @@ var SMSSample = [
         'id': 5,
         'address': '9999999999',
         'sms': 'KHẨN: Tài khoản của bạn đã bị xâm phạm. Nhấp vào đây để bảo mật.',
-        'spam': true
+        'spam': 1
     },
     {
         'id': 6,
@@ -39,7 +39,7 @@ var SMSSample = [
         'id': 7,
         'address': '8888888888',
         'sms': 'Ưu đãi trong thời gian giới hạn: Mua một tặng một miễn phí!',
-        'spam': true
+        'spam': 1
     },
     {
         'id': 8,
@@ -51,7 +51,7 @@ var SMSSample = [
         'id': 9,
         'address': '4444444444',
         'sms': 'Bạn đã được chọn để nhận chiết khấu đặc biệt.',
-        'spam': true
+        'spam': 1
     },
     {
         'id': 10,
@@ -69,7 +69,7 @@ var SMSSample = [
         'id': 12,
         'address': '4564564564',
         'sms': 'KHUYẾN MÃI LỚN: Giảm giá 50% cho toàn bộ sản phẩm.',
-        'spam': true
+        'spam': 1
     },
     {
         'id': 13,
@@ -87,19 +87,19 @@ var SMSSample = [
         "id": 16,
         "address": "3169640061",
         "sms": "Tin nh\u1eafn s\u1ed1 16: \u0110\u1eb7t h\u00e0ng ngay h\u00f4m nay \u0111\u1ec3 nh\u1eadn \u01b0u \u0111\u00e3i \u0111\u1eb7c bi\u1ec7t.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 17,
         "address": "4884750308",
         "sms": "Tin nh\u1eafn s\u1ed1 17: H\u00f4m nay l\u00e0 ng\u00e0y l\u1ec5 quan tr\u1ecdng. Ch\u00fac m\u1eebng v\u00e0 tr\u00e0n \u0111\u1ea7y ni\u1ec1m vui.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 18,
         "address": "5563595251",
         "sms": "Tin nh\u1eafn s\u1ed1 18: Th\u1eddi ti\u1ebft h\u00f4m nay r\u1ea5t \u0111\u1eb9p. H\u00e3y ra ngo\u00e0i v\u00e0 t\u1eadn h\u01b0\u1edfng.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 19,
@@ -135,13 +135,13 @@ var SMSSample = [
         "id": 24,
         "address": "5958002271",
         "sms": "Tin nh\u1eafn s\u1ed1 24: C\u1ea3m \u01a1n b\u1ea1n \u0111\u00e3 \u0111\u0103ng k\u00fd. Ch\u00fang t\u00f4i s\u1ebd li\u00ean h\u1ec7 l\u1ea1i trong th\u1eddi gian s\u1edbm nh\u1ea5t.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 25,
         "address": "7050026840",
         "sms": "Tin nh\u1eafn s\u1ed1 25: H\u1eb9n g\u1eb7p l\u1ea1i b\u1ea1n trong bu\u1ed5i ti\u1ec7c t\u1ed1i nay.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 26,
@@ -159,13 +159,13 @@ var SMSSample = [
         "id": 28,
         "address": "8659071515",
         "sms": "Tin nh\u1eafn s\u1ed1 28: Xin ch\u00fac m\u1eebng! B\u1ea1n \u0111\u00e3 tr\u00fang gi\u1ea3i \u0111\u1eb7c bi\u1ec7t.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 29,
         "address": "2951004489",
         "sms": "Tin nh\u1eafn s\u1ed1 29: Xin ch\u00fac m\u1eebng! B\u1ea1n \u0111\u00e3 tr\u00fang gi\u1ea3i \u0111\u1eb7c bi\u1ec7t.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 30,
@@ -189,13 +189,13 @@ var SMSSample = [
         "id": 33,
         "address": "1896314703",
         "sms": "Tin nh\u1eafn s\u1ed1 33: \u0110\u01a1n h\u00e0ng c\u1ee7a b\u1ea1n \u0111\u00e3 \u0111\u01b0\u1ee3c giao th\u00e0nh c\u00f4ng.",
-        "spam": true
+        "spam": 1
     },
     {
         "id": 34,
         "address": "9960748637",
         "sms": "Tin nh\u1eafn s\u1ed1 34: Ch\u00fac m\u1eebng sinh nh\u1eadt!",
-        "spam": true
+        "spam": 1
     }
     ];
 
@@ -270,8 +270,3 @@ Map getFilterConversationList(filter) {
   
 
 }
-void main() {
-  var smsList = getConversationList();
-  print(smsList);
-}
-

@@ -14,10 +14,15 @@ class SMSItem {
   late String sms;
 
   Map<String, Object?> toMap() {
+    if (spam == true) {
+      print("spam");
+    } else {
+      print("notspam");
+    }
     var map = <String, Object?>{
       columnSMS: sms,
       columnAddress: address,
-      columnSpam: spam == true ? 1 : 0
+      columnSpam: true == spam? 1 : 0
     };
 
     map[columnId] = id;
@@ -61,11 +66,22 @@ create table smsitem (
     return sms;
   }
 
-  Future<List<Map<String, Object?>>> getAll() async {
+  Future<List> getAll() async {
     var records = await db.query('smsitem');
-
     return records;
+    
   }
+
+  Future<List> getSMSbyPhone(phone) async {
+    var records = await db.query(
+      'smsitem',
+      columns: [columnId, columnSMS, columnAddress, columnSpam],
+      where: '$columnAddress = ?',
+      whereArgs: [phone]);
+    return records;
+    
+  }
+
   Future<SMSItem> getSMSItem(int id) async {
     List<Map> maps = await db.query(tableSMSItem,
         columns: [columnId, columnSMS, columnAddress, columnSpam],
@@ -82,9 +98,9 @@ create table smsitem (
         .delete(tableSMSItem, where: '$columnId = ?', whereArgs: [id]);
   }
 
-  Future<int> update(SMSItem todo) async {
-    return await db.update(tableSMSItem, todo.toMap(),
-        where: '$columnId = ?', whereArgs: [todo.id]);
+  Future<int> update(SMSItem sms) async {
+    return await db.update(tableSMSItem, sms.toMap(),
+        where: '$columnId = ?', whereArgs: [sms.id]);
   }
 
   Future close() async => db.close();

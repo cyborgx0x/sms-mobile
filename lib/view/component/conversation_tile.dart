@@ -4,7 +4,7 @@ import 'package:sms_spam_detection/view/state/page.dart';
 
 class ConversationTile extends StatelessWidget {
   final MapEntry conversation;
-  const ConversationTile(this.conversation, {super.key});
+  ConversationTile(this.conversation, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ConversationTile extends StatelessWidget {
           child: CircleAvatar(child: Icon(Icons.person)),
         ),
         title: Text(conversation.key),
-        subtitle: Text(conversation.value['sms']),
+        subtitle: Text(conversation.value.sms),
         onTap: () {
           
           currentPageState.changePage("detail_sms");

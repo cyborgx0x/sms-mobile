@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'view/main_layout.dart';
 import 'view/state/page.dart';
 import 'model/sqlite.dart';
-import 'model/sqlite.dart';
 class MyApp extends StatelessWidget {
 
 
