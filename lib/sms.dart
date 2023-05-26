@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
 
-
 backgroundMessageHandler(SmsMessage message) async {
   spamDetect("Test");
 }
@@ -13,18 +12,18 @@ final Telephony telephony = Telephony.instance;
 void topLevel() {
   telephony.listenIncomingSms(
       onNewMessage: (SmsMessage message) {
-        // Handle message
+        spamDetect(message.body);
       },
       onBackgroundMessage: backgroundMessageHandler);
 }
 
-Future<Result> spamDetect(String sms) async {
+Future<Result> spamDetect(String? sms) async {
   final response = await http.post(
-    Uri.parse('https://detection.diopthe20.com/spam_detection/'),
+    Uri.parse('https://sms.diopthe20.com/spam_detection/'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
+    body: jsonEncode(<String, String?>{
       'content': sms,
     }),
   );
@@ -90,6 +89,7 @@ class SMSItem {
     print('body is $body');
     print('is this spam: $spam');
   }
+
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -98,6 +98,7 @@ class SMSItem {
       'spam': spam,
     };
   }
+
   @override
   String toString() {
     return 'SMSItem{id: $id, address: $address, body: $body, spam: $spam}';
@@ -117,5 +118,3 @@ class Result {
     );
   }
 }
-
-

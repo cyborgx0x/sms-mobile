@@ -3,15 +3,14 @@ import 'package:provider/provider.dart';
 import 'view/main_layout.dart';
 import 'view/state/page.dart';
 import 'model/sqlite.dart';
+import 'sms.dart';
+
 class MyApp extends StatelessWidget {
-
-
   const MyApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-    
-    
+    topLevel();
     return ChangeNotifierProvider(
       create: (context) => PageState(),
       child: MaterialApp(
@@ -29,4 +28,3 @@ class MyApp extends StatelessWidget {
 void main() async {
   runApp(const MyApp());
 }
-
