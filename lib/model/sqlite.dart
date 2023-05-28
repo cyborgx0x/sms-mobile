@@ -107,3 +107,57 @@ create table smsitem (
 }
 
 
+
+class SMSItemReal {
+  final int id;
+  final String address;
+  final String body;
+  final String spam;
+  // final int date;
+  // final int dateSent;
+  // final bool read;
+  // final bool seen;
+  // final String subject;
+  // final int subscriptionId;
+  // final int threadId;
+  // final SmsType type;
+  // final SmsStatus status;
+  // final String serviceCenterAddress;
+
+  const SMSItemReal({
+    required this.id,
+    required this.address,
+    required this.body,
+    required this.spam,
+    // required this.date,
+    // required this.dateSent,
+    // required this.read,
+    // required this.seen,
+    // required this.subject,
+    // required this.subscriptionId,
+    // required this.threadId,
+    // required this.type,
+    // required this.status,
+    // required this.serviceCenterAddress,
+  });
+  void show() {
+    print('ID is $id');
+    print('adress is $address');
+    print('body is $body');
+    print('is this spam: $spam');
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'address': address,
+      'body': body,
+      'spam': spam,
+    };
+  }
+
+  @override
+  String toString() {
+    return 'SMSItem{id: $id, address: $address, body: $body, spam: $spam}';
+  }
+}

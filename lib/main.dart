@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     topLevel();
+    checkSpamAllSMS();
     return ChangeNotifierProvider(
       create: (context) => PageState(),
       child: MaterialApp(
