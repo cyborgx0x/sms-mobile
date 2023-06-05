@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'view/main_layout.dart';
 import 'view/state/page.dart';
-import 'model/sqlite.dart';
 import 'sms.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     topLevel();
-    checkSpamAllSMS();
+    // checkSpamAllSMS();
     return ChangeNotifierProvider(
       create: (context) => PageState(),
       child: MaterialApp(

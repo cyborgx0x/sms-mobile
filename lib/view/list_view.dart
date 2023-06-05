@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:sms_spam_detection/model/sqlite.dart';
 import 'component/sms_card.dart';
 import 'package:provider/provider.dart';
 import 'state/page.dart';
-import 'sample.dart';
 import 'component/conversation_tile.dart';
 import '../controller/data.dart';
 
@@ -26,7 +24,7 @@ class SMSListView extends StatelessWidget {
               children: [for (SMSItem sms in snapshot.data) SMSCard(sms)],
             );
           } else {
-            List<SMSItem> ConversationData = [
+            List<SMSItem> conversationData = [
               SMSItem.fromMap({
                 "id": 34,
                 "address": "9960748637",
@@ -37,7 +35,7 @@ class SMSListView extends StatelessWidget {
             ];
             
             return ListView(
-              children: [for (var sms in ConversationData) SMSCard(sms)],
+              children: [for (var sms in conversationData) SMSCard(sms)],
             );
           }
         });
@@ -52,14 +50,6 @@ class ConversationListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var currentPageState = context.watch<PageState>();
-    Map<String, SMSItem> ConversationData = {
-      "Sample": SMSItem.fromMap({
-        "id": 34,
-        "address": "9960748637",
-        "sms": "Tin nh\u1eafn s\u1ed1 34: Ch\u00fac m\u1eebng sinh nh\u1eadt!",
-        "spam": true
-      })
-    };
     Future data;
     switch (currentPageState.current) {
       case "no_spam_list":
@@ -82,7 +72,7 @@ class ConversationListView extends StatelessWidget {
               ],
             );
           } else {
-            Map<String, SMSItem> ConversationData = {
+            Map<String, SMSItem> conversationData = {
               "Sample": SMSItem.fromMap({
                 "id": 34,
                 "address": "9960748637",
@@ -93,7 +83,7 @@ class ConversationListView extends StatelessWidget {
             };
             return ListView(
               children: [
-                for (var conversation in ConversationData.entries)
+                for (var conversation in conversationData.entries)
                   ConversationTile(conversation)
               ],
             );

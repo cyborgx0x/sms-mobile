@@ -39,7 +39,6 @@ class SMSItem {
   }
   @override
   String toString() {
-    // TODO: implement toString
     return "id: %id, sms: $sms, address: $address, spam: $spam";
   }
 }

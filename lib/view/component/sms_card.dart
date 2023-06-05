@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sms_spam_detection/controller/data.dart';
+
 import 'package:sms_spam_detection/model/sqlite.dart';
 class SMSCard extends StatelessWidget {
   final SMSItem sms;
