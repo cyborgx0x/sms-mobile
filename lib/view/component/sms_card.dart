@@ -3,16 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:sms_spam_detection/model/sqlite.dart';
 class SMSCard extends StatelessWidget {
   final SMSItem sms;
-  const SMSCard(this.sms, {super.key});
+  final Icon icon;
+  const SMSCard(this.sms, this.icon, {super.key});
   @override
   Widget build(BuildContext context) {
-    var icon;
-    if (sms.spam == false) {
-      icon = Icons.sms;
-    }
-    else {
-      icon = Icons.block;
-    }
     return Center(
       child: SizedBox(
         
@@ -21,7 +15,7 @@ class SMSCard extends StatelessWidget {
           
           child: ListTile(
             leading: ExcludeSemantics(
-              child: CircleAvatar(child: Icon(icon)),
+              child: CircleAvatar(child: icon),
             ),
             title: Text(sms.sms),
             subtitle: Text(sms.address),

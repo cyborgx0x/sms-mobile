@@ -20,6 +20,14 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         ),
         home: SMSHomePage(),
+        routes: {
+          "detail_sms": (context) => SMSDetailPage(
+                senderName:
+                    ModalRoute.of(context)?.settings.arguments as String,
+              ),
+          "all_sms": (context) => AllSMSPage(),
+          "all_spam_list": (context) => SpamSMSListPage(),
+        },
       ),
     );
   }

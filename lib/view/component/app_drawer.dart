@@ -3,8 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../state/page.dart';
+
 // Press the Navigation Drawer button to the left of AppBar to show
 // a simple Drawer with two items.
 class SMSDrawer extends StatelessWidget {
@@ -12,7 +11,6 @@ class SMSDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var currentPageState = context.watch<PageState>();
     final drawerHeader = UserAccountsDrawerHeader(
       accountName: Text("Bonjour!!!"),
       accountEmail: Text(
@@ -31,30 +29,34 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.favorite),
           onTap: () {
-            currentPageState.changePage("no_spam_list");
-            Navigator.pop(context);
+            Navigator.pushNamed(context, "/");
           },
         ),
         ListTile(
           title: Text(
             "Spam",
           ),
-          leading: const Icon(Icons.comment),
+          leading: const Icon(Icons.block),
           onTap: () {
-            currentPageState.changePage("all_spam_list");
-            Navigator.pop(context);
+            Navigator.pushNamed(context, "all_spam_list");
           },
         ),
         ListTile(
           title: Text(
             "Tất cả hội thoại",
           ),
-          leading: const Icon(Icons.comment),
+          leading: const Icon(Icons.miscellaneous_services),
           onTap: () {
-            currentPageState.changePage("all_sms_list");
-            Navigator.pop(context);
+            Navigator.pushNamed(context, "all_sms");
           },
         ),
+        ListTile(
+            title: Text("Test Sender Name"),
+            leading: const Icon(Icons.comment),
+            onTap: () {
+              Navigator.pushNamed(context, "detail_sms",
+                  arguments: "abc@diopthe20.com");
+            })
       ],
     );
     return Drawer(
