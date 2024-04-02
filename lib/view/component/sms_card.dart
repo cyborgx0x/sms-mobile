@@ -7,13 +7,6 @@ class SMSCard extends StatelessWidget {
   const SMSCard(this.sms, this.icon, {super.key});
   @override
   Widget build(BuildContext context) {
-    // var icon;
-    // if (sms.spam == false) {
-    //   icon = Icons.sms;
-    // }
-    // else {
-    //   icon = Icons.block;
-    // }
     return Center(
       child: SizedBox(
         
