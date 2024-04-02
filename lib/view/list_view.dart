@@ -15,13 +15,15 @@ class SMSListView extends StatelessWidget {
   Widget build(BuildContext context) {
     var currentPageState = context.watch<PageState>();
     Future data;
-    data = controllergetSMSbyPhone(currentPageState.CurrentConversationID);
+    data = controllergetSMSbyPhone(currentPageState.currentConversationID);
     return FutureBuilder(
         future: data,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             return ListView(
-              children: [for (SMSItem sms in snapshot.data) SMSCard(sms)],
+              children: [
+                for (SMSItem sms in snapshot.data) SMSCard(sms, Icon(Icons.sms))
+              ],
             );
           } else {
             List<SMSItem> conversationData = [
@@ -33,9 +35,11 @@ class SMSListView extends StatelessWidget {
                 "spam": 1
               })
             ];
-            
+
             return ListView(
-              children: [for (var sms in conversationData) SMSCard(sms)],
+              children: [
+                for (var sms in conversationData) SMSCard(sms, Icon(Icons.sms))
+              ],
             );
           }
         });
@@ -43,26 +47,13 @@ class SMSListView extends StatelessWidget {
 }
 
 class ConversationListView extends StatelessWidget {
-  const ConversationListView({
-    super.key,
-  });
+  final Future<Map<String, SMSItem>> conversationList;
+  const ConversationListView({super.key, required this.conversationList});
 
   @override
   Widget build(BuildContext context) {
-    var currentPageState = context.watch<PageState>();
-    Future data;
-    switch (currentPageState.current) {
-      case "no_spam_list":
-        data = getFilterConversationListDB("nospam");
-        break;
-      case "all_spam_list":
-        data = getFilterConversationListDB("spam");
-        break;
-      default:
-        data = getConversationListDB();
-    }
     return FutureBuilder(
-        future: data,
+        future: conversationList,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             return ListView(
