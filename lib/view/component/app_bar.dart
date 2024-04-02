@@ -16,31 +16,29 @@ class SMSAppBar extends StatelessWidget {
     if (currentPageState.current == "detail_sms") {
       show = Row(
         children: [
-          BackButton(onPressed: () => currentPageState.changePage(currentPageState.previousPage),),
+          BackButton(
+            onPressed: () =>
+                currentPageState.changePage(currentPageState.previousPage),
+          ),
           showTitle(),
         ],
       );
-      return AppBar(
-        title: show
-      );
-    }
-    else {
+      return AppBar(title: show);
+    } else {
       show = showTitle();
       return AppBar(
         title: show,
         actions: [
-          
           IconButton(
             tooltip: "Tìm kiếm",
             icon: const Icon(
               Icons.search,
             ),
             onPressed: () {},
-          )
+          ),
         ],
       );
     }
-    
   }
 }
 
@@ -53,25 +51,21 @@ class showTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     var currentPageState = context.watch<PageState>();
     if (currentPageState.current == "detail_sms") {
-        return Text(
-          currentPageState.CurrentConversationID,
-        );
-    }
-    else if (currentPageState.current == "no_spam_list") {
       return Text(
-          "Hội thoại",
-        );
-    }
-    else if (currentPageState.current == "all_spam_list") {
+        currentPageState.CurrentConversationID,
+      );
+    } else if (currentPageState.current == "no_spam_list") {
       return Text(
-          "Hộp thư rác",
-        );
-    }
-    else {
-    return Text(
-      "Tất cả hội thoại",
-    );
+        "Hội thoại",
+      );
+    } else if (currentPageState.current == "all_spam_list") {
+      return Text(
+        "Hộp thư rác",
+      );
+    } else {
+      return Text(
+        "Tất cả hội thoại",
+      );
     }
   }
 }
-

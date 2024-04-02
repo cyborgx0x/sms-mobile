@@ -23,15 +23,12 @@ class SMSHomePage extends StatelessWidget {
     var drawer;
     if (currentPageState.current == "detail_sms") {
       drawer = null;
-    }
-    else {
+    } else {
       drawer = SMSDrawer();
     }
 
     return Scaffold(
-      
       drawer: drawer,
-
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0), //
         child: SMSAppBar(),
@@ -44,5 +41,19 @@ class SMSHomePage extends StatelessWidget {
     );
   }
 }
+
+class MainSMSLayout extends StatelessWidget {
+  const MainSMSLayout({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Hội thoại"),
+      ),
+    );
+  }
+}
+
 
 

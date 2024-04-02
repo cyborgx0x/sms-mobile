@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../state/page.dart';
+
 // Press the Navigation Drawer button to the left of AppBar to show
 // a simple Drawer with two items.
 class SMSDrawer extends StatelessWidget {
@@ -31,8 +32,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.favorite),
           onTap: () {
-            currentPageState.changePage("no_spam_list");
-            Navigator.pop(context);
+            Navigator.pushNamed(context, "no_spam_list");
           },
         ),
         ListTile(
@@ -51,8 +51,7 @@ class SMSDrawer extends StatelessWidget {
           ),
           leading: const Icon(Icons.comment),
           onTap: () {
-            currentPageState.changePage("all_sms_list");
-            Navigator.pop(context);
+            Navigator.pushNamed(context, "all_spam_list");
           },
         ),
       ],
