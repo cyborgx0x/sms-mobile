@@ -15,6 +15,7 @@ void topLevel() {
   telephony.listenIncomingSms(
       onNewMessage: (SmsMessage message) {
         Future result = spamDetect(message);
+        
         bool spam = false;
         result.then(
           (value) {

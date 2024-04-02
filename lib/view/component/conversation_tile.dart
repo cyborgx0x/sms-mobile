@@ -17,12 +17,10 @@ class ConversationTile extends StatelessWidget {
         title: Text(conversation.key),
         subtitle: Text(conversation.value.sms),
         onTap: () {
-          
-          currentPageState.changePage("detail_sms");
           currentPageState.changeSMS(conversation.key);
+          Navigator.pushNamed(context, "detail_sms", arguments: conversation.key);
         },
       ),
     );
   }
-
 }
